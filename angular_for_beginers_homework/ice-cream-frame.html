@@ -1,0 +1,6 @@
+<div>
+    <h2>{{icecream.name | lowercase}}</h2><br/>
+    <p> {{icecream.price}} BYN </p><br/>
+    <img ng-src="{{icecream.src}}">
+    <input checked="{{icecream.selected}}" type="checkbox" ng-model="icecream.selected" ng-change="toggleIce()"> Add to cart
+</div>
