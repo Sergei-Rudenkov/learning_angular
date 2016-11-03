@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-controller="Todo as $ctrl" ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>{{$ctrl.todo.user}}'s TO DO List</title>
+	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/ng-cloak.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1><img class="photo" src="images/SR.png">
+				{{$ctrl.todo.user}}'s To Do List
+				<span class="label label-default" ng-class="$ctrl.warningLevel($ctrl.todo.items)" ng-hide="$ctrl.incompleteCount($ctrl.todo.items) === 0">
+					{{$ctrl.incompleteCount($ctrl.todo.items)}}
+				</span>
+			</h1>
+		</div>
+		<div class="panel">
+			<form novalidate name="newTask">
+				<div class="form-group">
+					<label for="action">Action:</label>
+					<div class="input-group">
+						<input ng-model="$ctrl.newItem.action" id="action" name="action" class="form-control" />
+						<span class="input-group-btn">
+							<button
+									class="btn btn-primary"
+									ng-click="$ctrl.addNewItem($ctrl.todo.items, $ctrl.newItem)"
+							>Add</button>
+						</span>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> To Do List
+			</div>
+			<div class="panel-body">
+				<task-list></task-list>
+			</div>
+		</div>
+	</div>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
