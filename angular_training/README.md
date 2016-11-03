@@ -13,3 +13,6 @@ Setup Environment
 
 5. run project from project folder:
 	> npm start
+	
+	
+***lecturer Vitaliy Zhyrytskyy***
