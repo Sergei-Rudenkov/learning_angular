@@ -3,12 +3,7 @@
  */
 (function () {
     "use strict";
-
-    angular
-        .module("app", [
-        "common",
-        "feature"
-    ])
+    angular.module("todo-feature", [])
         .run(runApp)
         .value("model", {
             "user": "Sergei",
@@ -19,9 +14,5 @@
         $http
             .get("./feature/todo-feature/todo-feature.json")
             .then((response) => model.items = response.data);
-    };
-
-    // angular.element(document).ready(function() {
-    //     angular.bootstrap(document, ['app']);
-    // });
+    }
 });

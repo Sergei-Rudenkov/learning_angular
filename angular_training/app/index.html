@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{$ctrl.todo.user}}'s TO DO List</title>
-	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/ng-cloak.css" rel="stylesheet">
+	<link href="/../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/../vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/../css/main.css" rel="stylesheet">
+	<link href="/../css/ng-cloak.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -44,7 +44,18 @@
 			</div>
 		</div>
 	</div>
-<script src="vendor/angular/angular.min.js"></script>
-<script src="app.js"></script>
+	<script src="app.js"></script>
+	<script src="vendor/angular/angular.min.js"></script>
+	<script src="feature/feature.module.js"></script>
+	<script src="feature/todo-feature/todo.module.js"></script>
+	<script src="feature/todo-feature/todo.controller.js"></script>
+	<script src="feature/todo-feature/todo.directive.js"></script>
+	<script src="feature/todo-feature/todo.service.js"></script>
+	<!--<script src="common/common.module.js"></script>-->
+	<!--<script src="common/filters/common-filters.module.js"></script>-->
+	<!--<script src="common/filters/checked-item.filter.js"></script>-->
+	<!--<script src="common/services/common-services.module.js"></script>-->
+
+
 </body>
 </html>
