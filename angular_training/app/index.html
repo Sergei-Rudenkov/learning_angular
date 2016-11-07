@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-controller="Todo as $ctrl" ng-app="app">
+<html ng-controller="Todo as $ctrl" ng-app="app" ng-cloak>
 <head>
 	<meta charset="utf-8">
 	<title>{{$ctrl.todo.user}}'s TO DO List</title>
@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<div class="page-header">
-			<h1><img class="photo" src="images/SR.png">
+			<h1><img class="photo" src="{{$ctrl.todo.userPhoto}}">
 				{{$ctrl.todo.user}}'s To Do List
 				<span class="label label-default" ng-class="$ctrl.warningLevel($ctrl.todo.items)" ng-hide="$ctrl.incompleteCount($ctrl.todo.items) === 0">
 					{{$ctrl.incompleteCount($ctrl.todo.items)}}
@@ -44,18 +44,16 @@
 			</div>
 		</div>
 	</div>
-	<script src="app.js"></script>
 	<script src="vendor/angular/angular.min.js"></script>
+	<script src="app.js"></script>
 	<script src="feature/feature.module.js"></script>
 	<script src="feature/todo-feature/todo.module.js"></script>
 	<script src="feature/todo-feature/todo.controller.js"></script>
 	<script src="feature/todo-feature/todo.directive.js"></script>
 	<script src="feature/todo-feature/todo.service.js"></script>
-	<!--<script src="common/common.module.js"></script>-->
-	<!--<script src="common/filters/common-filters.module.js"></script>-->
-	<!--<script src="common/filters/checked-item.filter.js"></script>-->
-	<!--<script src="common/services/common-services.module.js"></script>-->
-
-
+	<script src="common/common.module.js"></script>
+	<script src="common/filters/common-filters.module.js"></script>
+	<script src="common/filters/checked-item.filter.js"></script>
+	<script src="common/services/common-services.module.js"></script>
 </body>
 </html>

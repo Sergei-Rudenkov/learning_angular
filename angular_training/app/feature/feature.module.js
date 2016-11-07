@@ -6,4 +6,4 @@
     angular.module("feature", [
         "todo-feature"
     ]);
-});
+})();

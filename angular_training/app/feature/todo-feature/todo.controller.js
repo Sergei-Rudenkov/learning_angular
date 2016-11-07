@@ -13,5 +13,10 @@
         console.log($ctrl.todo);
         Object.assign($ctrl, todoService);
         $ctrl.showComplete = false;
+
+        $ctrl.delete = function (item) {
+            var index = $ctrl.todo.items.indexOf(item);
+            $ctrl.todo.items.splice(index, 1)
+        }
     }
-});
+})();

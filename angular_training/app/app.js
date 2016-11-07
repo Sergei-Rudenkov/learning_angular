@@ -4,24 +4,8 @@
 (function () {
     "use strict";
 
-    angular
-        .module("app", [
+    angular.module("app", [
         "common",
-        "feature"
-    ])
-        .run(runApp)
-        .value("model", {
-            "user": "Sergei",
-            "userPhoto": "./images/SR.png"
-        });
-
-    function runApp($http, model) {
-        $http
-            .get("./feature/todo-feature/todo-feature.json")
-            .then((response) => model.items = response.data);
-    };
-
-    // angular.element(document).ready(function() {
-    //     angular.bootstrap(document, ['app']);
-    // });
-});
+        "feature" ]
+    );
+})();

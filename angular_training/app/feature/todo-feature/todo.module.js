@@ -12,7 +12,7 @@
 
     function runApp($http, model) {
         $http
-            .get("./feature/todo-feature/todo-feature.json")
+            .get("./feature/todo-feature/todo.json")
             .then((response) => model.items = response.data);
     }
-});
+})();

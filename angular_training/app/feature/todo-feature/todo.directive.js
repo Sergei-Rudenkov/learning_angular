@@ -13,4 +13,4 @@
             templateUrl: "feature/todo-feature/todo_table.html"
         };
     }
-});
+})();
