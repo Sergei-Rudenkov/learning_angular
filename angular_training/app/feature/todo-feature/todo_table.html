@@ -5,27 +5,31 @@
     </label>
     <thead>
     <tr>
-        <th>Description</th>
+        <th ng-click="$ctrl.sortItemsReverse==false ? $ctrl.sortItemsReverse=true:$ctrl.sortItemsReverse=false">Description</th>
+        <th>Deadline</th>
+        <th>Estimation</th>
         <th>Done</th>
         <th class="text-right">Commands</th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="item in $ctrl.todo.items | checkedItems:$ctrl.showComplete">
+    <tr ng-repeat="item in $ctrl.todo.items | checkedItems:$ctrl.showComplete | orderBy : 'action' :  $ctrl.sortItemsReverse ">
         <td>{{item.action}}</td>
+        <td>{{item.deadline}}</td>
+        <td>{{item.estimation}}</td>
         <td>
             <input type="checkbox" ng-model="item.done">
         </td>
-        <td>{{item.done ? 'Yes':'No'}}</td>
         <td class="text-right">
             <button
+                    ng-click="$ctrl.editItem(item, $ctrl.newItem, $ctrl.todo.items)"
                     type="button"
                     class="btn btn-primary">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"
                                           title="Edit"></span>
             </button>
             <button
-                    ng-click="$ctrl.delete(item)"
+                    ng-click="$ctrl.deleteItem(item, $ctrl.todo.items)"
                     type="button"
                     class="btn btn-danger">
 									<span class="glyphicon glyphicon-trash" aria-hidden="true"
@@ -36,3 +40,12 @@
 
     </tbody>
 </table>
+
+<button
+        ng-click="$ctrl.deleteAllCompletedItems($ctrl.todo.items)"
+        type="button"
+        class="btn btn-danger">
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"
+                                          title="Delete All Completed"></span>
+    Delete All Completed
+</button>
