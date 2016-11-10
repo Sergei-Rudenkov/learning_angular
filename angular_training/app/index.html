@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html ng-controller="Todo as $ctrl" ng-app="app" ng-cloak>
-<head>
+<html ng-app="app" ng-cloak ng-controller="TodoTable as $ctrl">
+<head ng-controller="TodoHeader as $ctrl">
 	<meta charset="utf-8">
 	<title>{{$ctrl.todo.user}}'s TO DO List</title>
 	<link href="/../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -9,7 +9,7 @@
 	<link href="/../css/ng-cloak.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
+	<div class="container" ng-controller="TodoForm as $ctrl">
 		<div class="page-header">
 			<h1><img class="photo" src="{{$ctrl.todo.userPhoto}}">
 				{{$ctrl.todo.user}}'s To Do List
@@ -48,7 +48,9 @@
 	<script src="app.js"></script>
 	<script src="feature/feature.module.js"></script>
 	<script src="feature/todo-feature/todo.module.js"></script>
-	<script src="feature/todo-feature/todo.controller.js"></script>
+	<script src="feature/todo-feature/todo-table.controller.js"></script>
+	<script src="feature/todo-feature/todo-form.controller.js"></script>
+	<script src="feature/todo-feature/todo-header.controller.js"></script>
 	<script src="feature/todo-feature/todo.directive.js"></script>
 	<script src="feature/todo-feature/todo.service.js"></script>
 	<script src="common/common.module.js"></script>

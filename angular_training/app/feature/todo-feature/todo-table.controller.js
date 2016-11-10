@@ -5,9 +5,9 @@
    "use strict";
 
     angular.module("todo-feature")
-        .controller('Todo', Todo);
+        .controller('TodoTable', TodoTable);
 
-    function Todo(model, todoService) {
+    function TodoTable(model, todoService) {
         let $ctrl = this;
         $ctrl.todo = model;
         console.log($ctrl.todo);
