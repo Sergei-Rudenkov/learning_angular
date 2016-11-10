@@ -1,18 +1,26 @@
 [
   {
     "action": "Estimate...",
+    "deadline": "11/18/2016",
+    "estimation": 10,
     "done": false
   },
   {
     "action": "Create...",
+    "deadline": "12/11/2016",
+    "estimation": 12,
     "done": false
   },
   {
     "action": "Edit...",
+    "deadline": "11/11/2016",
+    "estimation": 15,
     "done": true
   },
   {
     "action": "Delete...",
+    "deadline": "11/10/2016",
+    "estimation": 20,
     "done": false
   }
 ]
