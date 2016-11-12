@@ -6,21 +6,21 @@
     <thead>
     <tr>
         <th ng-click="$ctrl.sortItemsReverse==false ? $ctrl.sortItemsReverse=true:$ctrl.sortItemsReverse=false">Description</th>
-        <th>Deadline</th>
-        <th>Estimation</th>
-        <th>Done</th>
-        <th class="text-right">Commands</th>
+        <th ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Deadline')">Deadline</th>
+        <th ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Estimation')">Estimation</th>
+        <th ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Done')">Done</th>
+        <th ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Commands')" class="text-right">Commands</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="item in $ctrl.todo.items | checkedItems:$ctrl.showComplete | orderBy : 'action' :  $ctrl.sortItemsReverse ">
         <td>{{item.action}}</td>
-        <td>{{item.deadline}}</td>
-        <td>{{item.estimation}}</td>
-        <td>
+        <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Deadline')">{{item.deadline}}</td>
+        <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Estimation')">{{item.estimation}}</td>
+        <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Done')">
             <input type="checkbox" ng-model="item.done">
         </td>
-        <td class="text-right">
+        <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Commands')" class="text-right">
             <button
                     ng-click="$ctrl.editItem(item, $ctrl.newItem, $ctrl.todo.items)"
                     type="button"

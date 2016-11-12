@@ -7,5 +7,5 @@
     angular.module("app", [
         "common",
         "feature" ]
-    );
+    )
 })();
