@@ -15,12 +15,36 @@
     "action": "Edit...",
     "deadline": "11/11/2016",
     "estimation": 15,
-    "done": true
+    "done": false
   },
   {
     "action": "Delete...",
     "deadline": "11/10/2016",
     "estimation": 20,
+    "done": false
+  },
+  {
+    "action": "Live...",
+    "deadline": "11/18/2016",
+    "estimation": 500,
+    "done": false
+  },
+  {
+    "action": "Love...",
+    "deadline": "12/11/2016",
+    "estimation": 500,
+    "done": false
+  },
+  {
+    "action": "Swim...",
+    "deadline": "11/11/2016",
+    "estimation": 15,
+    "done": false
+  },
+  {
+    "action": "Enjoy summer...",
+    "deadline": "11/10/2016",
+    "estimation": 100,
     "done": false
   }
 ]
