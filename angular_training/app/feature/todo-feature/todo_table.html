@@ -24,7 +24,8 @@ Search term:
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="item in $ctrl.todo.paginatedItems
+    <tr ng-repeat="item in $ctrl.todo.items
+    | paginationFilter : $ctrl.limit : $ctrl.startFrom
     | twoColumnsFilter : $ctrl.searchText
     | checkedItems:$ctrl.showComplete
     | orderBy : 'action' :  $ctrl.sortItemsReverse ">

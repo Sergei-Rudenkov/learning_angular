@@ -11,7 +11,7 @@
 
     function paginationFilter() {
         return function (items, limit, startFrom) {
-            if (items & startFrom >=0 && limit >= 0) {
+            if (items && startFrom >=0 && limit >= 0) {
                 return items.slice(startFrom, startFrom + limit);
             }else if(items && limit >= 0){
                 return items.slice(0, limit);
