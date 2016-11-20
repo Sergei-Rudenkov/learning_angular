@@ -1,8 +1,19 @@
+Search term:
+<input type="text" ng-model="$ctrl.searchText">
+
 <table class="table table-striped">
     <label>
         <input type="checkbox" ng-model="$ctrl.showComplete">
         Show Complete
     </label>
+    <br/>
+    <div class="btn-group">
+        <button class="btn-success" ng-click="$ctrl.decrementPage()">Previous</button>
+        <button class="btn-success" ng-click="$ctrl.incrementPage()">Next</button>
+        <lebel> Limit per page:
+            <input type="text" ng-model="$ctrl.limit">
+        </lebel>
+    </div>
     <thead>
     <tr>
         <th ng-click="$ctrl.sortItemsReverse==false ? $ctrl.sortItemsReverse=true:$ctrl.sortItemsReverse=false">Description</th>
@@ -13,7 +24,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="item in $ctrl.todo.items | checkedItems:$ctrl.showComplete | orderBy : 'action' :  $ctrl.sortItemsReverse ">
+    <tr ng-repeat="item in $ctrl.todo.items
+    | paginationFilter : $ctrl.limit : $ctrl.startFrom
+    | twoColumnsFilter : $ctrl.searchText
+    | checkedItems:$ctrl.showComplete
+    | orderBy : 'action' :  $ctrl.sortItemsReverse ">
         <td>{{item.action}}</td>
         <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Deadline')">{{item.deadline}}</td>
         <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Estimation')">{{item.estimation}}</td>
@@ -37,7 +52,6 @@
             </button>
         </td>
     </tr>
-
     </tbody>
 </table>
 
