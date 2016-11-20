@@ -3,7 +3,7 @@
  */
 (function () {
     "use strict";
-    angular.module("todo-feature", [])
+    angular.module("todo-feature", ["paging-module"])
         .run(runApp)
         .value("model", {
             "user": "Sergei",

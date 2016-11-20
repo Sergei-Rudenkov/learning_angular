@@ -1,0 +1,14 @@
+Search term:
+<input type="text" ng-model="$ctrl.searchText">
+<label>
+    <input type="checkbox" ng-model="$ctrl.showComplete">
+    Show Complete
+</label>
+
+<div class="btn-group">
+    <button class="btn-success" ng-click="$ctrl.decrementPage()">Previous</button>
+    <button class="btn-success" ng-click="$ctrl.incrementPage()">Next</button>
+    <lebel> Limit per page:
+        <input type="text" ng-model="$ctrl.limit">
+    </lebel>
+</div>
