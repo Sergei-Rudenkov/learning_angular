@@ -6,10 +6,7 @@
 
     angular.module("todo-feature")
         .component("taskList", {
-            templateUrl: "feature/todo-feature/todo_table.html",
-            controller: "Todo",
-            require: {
-                "parent": "paging"
-            }
+            templateUrl: "feature/todo-table/todo_table.html",
+            controller: "Todo"
         });
 })();

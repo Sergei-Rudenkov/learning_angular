@@ -16,6 +16,7 @@
         let sortItemsReverse;
         let tableItems = [];
         let newItem = {};
+        let searchText;
 
 
         //API
@@ -37,8 +38,18 @@
             getTableItems,
             setTableItems,
             getNewItem,
-            setNewItem
+            setNewItem,
+            getSearchText,
+            setSearchText
         };
+
+        function getSearchText() {
+            return searchText;
+        }
+
+        function setSearchText(text) {
+            searchText = text;
+        }
 
         function getNewItem() {
             return newItem;
@@ -64,11 +75,11 @@
             pagingLimit = newLimit;
         }
 
-        function getStartPagingForm() {
+        function getStartPagingFrom() {
             return startPagingFrom;
         }
 
-        function setStartPagingForm(newStartPagingForm) {
+        function setStartPagingFrom(newStartPagingForm) {
             startPagingFrom = newStartPagingForm;
         }
 

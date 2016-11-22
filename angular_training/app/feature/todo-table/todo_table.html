@@ -29,11 +29,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="item in $ctrl.todo.items
-    | paginationFilter : $ctrl.parent.limit : $ctrl.parent.startFrom
-    | twoColumnsFilter : $ctrl.parent.searchText
-    | checkedItems:$ctrl.parent.showComplete
-    | orderBy : 'action' :  $ctrl.parent.sortItemsReverse ">
+    <tr ng-repeat="item in $ctrl.getTableItems()
+    | paginationFilter : $ctrl.getPagingLimit() : $ctrl.getStartPagingFrom()
+    | twoColumnsFilter : $ctrl.getSearchText()
+    | checkedItems:$ctrl.getShowComplete()
+    | orderBy : 'action' :  $ctrl.getSortItemsReverse()">
         <td>{{item.action}}</td>
         <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Deadline')">{{item.deadline}}</td>
         <td ng-show="$ctrl.getColumnsFromLocalStorage().indexOf('Estimation')">{{item.estimation}}</td>

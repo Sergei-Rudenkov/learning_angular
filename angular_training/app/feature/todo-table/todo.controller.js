@@ -9,10 +9,8 @@
 
     function Todo(model, todoService, lsService) {
         let $ctrl = this;
-        $ctrl.todo = model;
-        $ctrl.newItem = {};
         Object.assign($ctrl, todoService);
         Object.assign($ctrl, lsService);
-
+        $ctrl.setTableItems(model.items);
     }
 })();

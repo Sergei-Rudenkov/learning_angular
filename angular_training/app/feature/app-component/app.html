@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-controller="Todo as $ctrl" ng-app="app" ng-cloak>
+<head>
+    <meta charset="utf-8">
+    <title>{{$ctrl.todo.user}}'s TO DO List</title>
+    <link href="/../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/../css/main.css" rel="stylesheet">
+    <link href="/../css/ng-cloak.css" rel="stylesheet">
+</head>
+<body ng-transclude>
+
+
+
+
+
+
+
+
+
+
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="feature/feature.module.js"></script>
+<script src="feature/todo-table/todo.module.js"></script>
+<script src="feature/todo-table/todo.controller.js"></script>
+<script src="feature/todo-table/todo.component.js"></script>
+<script src="feature/todo-table/todo.service.js"></script>
+<script src="feature/todo-table/paging/paging.module.js"></script>
+<script src="feature/todo-table/paging/paging.controller.js"></script>
+<script src="feature/todo-table/paging/paging.component.js"></script>
+<script src="common/common.module.js"></script>
+<script src="common/filters/common-filters.module.js"></script>
+<script src="common/filters/checked-item.filter.js"></script>
+<script src="common/services/common-services.module.js"></script>
+<script src="common/services/ls.service.js"></script>
+<script src="common/services/star.service.js"></script>
+<script src="common/services/log-decorator.service.js"></script>
+<script src="common/services/string-generator.service.js"></script>
+<script src="common/filters/two-columns.filter.js"></script>
+<script src="common/filters/pagination.filter.js"></script>
+
+</body>
+</html>
