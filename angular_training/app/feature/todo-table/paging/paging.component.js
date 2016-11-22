@@ -4,7 +4,13 @@
     angular.module("paging-module")
         .component('paging', {
             templateUrl: "feature/todo-table/paging/paging.html",
-            controller: "PagingController"
+            controller: "PagingController",
+            binding: {
+                "perpage": "="
+            },
+            require: {
+                parent: "^taskList"
+            }
         });
 
 })();

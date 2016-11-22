@@ -7,6 +7,10 @@
     angular.module("todo-feature")
         .component("taskList", {
             templateUrl: "feature/todo-table/todo_table.html",
-            controller: "Todo"
+            controller: "Todo",
+            transclude: true,
+            require: {
+                parent: "^app"
+            }
         });
 })();

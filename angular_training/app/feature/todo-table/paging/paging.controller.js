@@ -18,6 +18,7 @@
                 todoService.setStartPagingFrom(parseInt(todoService.getStartPagingFrom()) + parseInt(todoService.getPagingLimit()));
             }
         };
+
         $scope.$watch('$ctrl.limit', function(newVal, oldVal){
             if(newVal) {
                 todoService.setPagingLimit(newVal);
