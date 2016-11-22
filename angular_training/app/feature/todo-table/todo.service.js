@@ -9,6 +9,16 @@
 
 
     function todoService() {
+
+        let pagingLimit = 2;
+        let startPagingFrom = 0;
+        let showComplete;
+        let sortItemsReverse;
+        let tableItems = [];
+        let newItem = {};
+        let searchText;
+
+
         //API
         return {
             addNewItem,
@@ -17,9 +27,78 @@
             editItem,
             incompleteCount,
             warningLevel,
+            getPagingLimit,
+            setPagingLimit,
+            getStartPagingFrom,
+            setStartPagingFrom,
+            getShowComplete,
+            setShowComplete,
+            setSortItemsReverse,
+            getSortItemsReverse,
+            getTableItems,
+            setTableItems,
+            getNewItem,
+            setNewItem,
+            getSearchText,
+            setSearchText
         };
 
-        //IMPL
+        function getSearchText() {
+            return searchText;
+        }
+
+        function setSearchText(text) {
+            searchText = text;
+        }
+
+        function getNewItem() {
+            return newItem;
+        }
+
+        function setNewItem(item) {
+            newItem = item;
+        }
+
+        function getTableItems() {
+            return tableItems;
+        }
+
+        function setTableItems(newTableItems) {
+            tableItems = newTableItems;
+        }
+
+        function getPagingLimit() {
+            return pagingLimit;
+        }
+
+        function setPagingLimit(newLimit) {
+            pagingLimit = newLimit;
+        }
+
+        function getStartPagingFrom() {
+            return startPagingFrom;
+        }
+
+        function setStartPagingFrom(newStartPagingForm) {
+            startPagingFrom = newStartPagingForm;
+        }
+
+        function getShowComplete() {
+            return showComplete;
+        }
+
+        function setShowComplete(newShowComplete) {
+            showComplete = newShowComplete;
+        }
+
+        function getSortItemsReverse() {
+            return sortItemsReverse;
+        }
+
+        function setSortItemsReverse(newSortItemsReverse) {
+            sortItemsReverse = newSortItemsReverse;
+        }
+
         function addNewItem(items, newItem) {
             if (newItem && newItem.action) {
                 items.push({

@@ -3,7 +3,7 @@
  */
 (function () {
     "use strict";
-    angular.module("todo-feature", [])
+    angular.module("todo-feature", ["paging-module"])
         .run(runApp)
         .value("model", {
             "user": "Sergei",
@@ -12,7 +12,7 @@
 
     function runApp($http, model) {
         $http
-            .get("./feature/todo-feature/todo.json")
+            .get("./feature/todo-table/todo.json")
             .then((response) => model.items = response.data);
     }
 })();
