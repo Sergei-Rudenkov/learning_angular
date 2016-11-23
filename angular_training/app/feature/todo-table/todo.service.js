@@ -8,7 +8,7 @@
         .factory("todoService", todoService);
 
 
-    function todoService() {
+    function todoService($http, model, $q, $timeout) {
 
         let pagingLimit = 2;
         let startPagingFrom = 0;
@@ -17,6 +17,11 @@
         let tableItems = [];
         let newItem = {};
         let searchText;
+        let users = [
+            {"name": "Ann June"},
+            {"name": "Ban Gule"},
+            {"name": "Cider Duren"}
+        ];
 
 
         //API
@@ -40,8 +45,26 @@
             getNewItem,
             setNewItem,
             getSearchText,
-            setSearchText
+            setSearchText,
+            readJsonData,
+            getUsers
         };
+
+        function readJsonData() {
+            return $http
+                .get("./feature/todo-table/todo.json");
+        }
+
+        function getUsers() {
+            return $q( (resolve, reject) => {
+                $timeout(() => {
+                    let flag = true;
+
+                    flag ? resolve(users) : reject("Error Users");
+
+                }, 2000);
+            });
+        }
 
         function getSearchText() {
             return searchText;

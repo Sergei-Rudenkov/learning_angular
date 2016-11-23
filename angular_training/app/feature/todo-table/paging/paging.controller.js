@@ -21,7 +21,7 @@
 
         $scope.$watch('$ctrl.limit', function(newVal, oldVal){
             if(newVal) {
-                todoService.setPagingLimit(newVal);
+                todoService.setPagingLimit(parseInt(newVal));
             }
         }, true);
         $scope.$watch('$ctrl.searchText', function(newVal, oldVal){

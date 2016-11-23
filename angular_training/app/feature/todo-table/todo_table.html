@@ -1,7 +1,4 @@
 <table class="table table-striped">
-
-
-
     <thead>
     <div ng-transclude>
 
@@ -35,7 +32,7 @@
                                           title="Edit"></span>
             </button>
             <button
-                    ng-click="$ctrl.deleteItem(item, $ctrl.todo.items)"
+                    ng-click="$ctrl.deleteItem(item, $ctrl.getTableItems())"
                     type="button"
                     class="btn btn-danger">
 									<span class="glyphicon glyphicon-trash" aria-hidden="true"
@@ -48,7 +45,7 @@
 </table>
 
 <button
-        ng-click="$ctrl.deleteAllCompletedItems($ctrl.todo.items)"
+        ng-click="$ctrl.deleteAllCompletedItems($ctrl.getTableItems())"
         type="button"
         class="btn btn-danger">
 									<span class="glyphicon glyphicon-trash" aria-hidden="true"

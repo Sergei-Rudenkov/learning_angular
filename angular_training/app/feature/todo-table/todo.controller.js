@@ -7,10 +7,32 @@
     angular.module("todo-feature")
         .controller('Todo', Todo);
 
-    function Todo(model, todoService, lsService) {
+    function Todo(model, todoService, lsService, $q) {
         let $ctrl = this;
         Object.assign($ctrl, todoService);
         Object.assign($ctrl, lsService);
-        $ctrl.setTableItems(model.items);
+        todoService.readJsonData();
+
+        let userPromise = todoService.getUsers(),
+            jsonTasks = todoService.readJsonData();
+
+        $q.all([userPromise, jsonTasks])
+            .then(getAllDataSuccess)
+            .catch(getTasksError)
+            .finally(getTasksComplete);
+
+        function getAllDataSuccess(dataArray) {
+            console.log(dataArray[0]);
+            model.items = dataArray[1].data;
+            $ctrl.setTableItems(model.items);
+        }
+
+        function getTasksError(reason) {
+            console.log(reason);
+        }
+
+        function getTasksComplete() {
+            console.log("Get Tasks is Completed");
+        }
     }
 })();
