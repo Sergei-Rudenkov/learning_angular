@@ -6,7 +6,7 @@
 			templateUrl: "tasks/add-task/add-task.html",
 			controller: "AddTask",
 			bindings: {
-				users: "<"
+				task: "<"
 			}
 		});
 })();

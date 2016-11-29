@@ -26,7 +26,7 @@
 						controllerAs: "$ctrl",
 						resolve: {
 							users: function(usersSrv) {
-								return usersSrv.getData();
+								return usersSrv.getUsers();
 							}
 						}
 					}

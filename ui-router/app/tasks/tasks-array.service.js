@@ -18,7 +18,8 @@
 			getTask,
 			getUserTasks,
 			add,
-			update
+			update,
+			deleteTask
 		};
 
 		function getAllTasks() {
@@ -68,6 +69,14 @@
 			if (idx) {
 				tasks[idx] = taskToUpdate;
 			}
+		}
+		function deleteTask(taskToUpdate) {
+			tasks.forEach( (task, index) => {
+				if (task === taskToUpdate) {
+					tasks.splice(index, 1);
+				}
+			});
+
 		}
 	}
 

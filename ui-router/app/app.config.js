@@ -26,7 +26,7 @@
 				controllerAs: "$ctrl",
 				resolve: {
 					users: function(usersSrv) {
-						return usersSrv.getData();
+						return usersSrv.getUsers();
 					}
 				},
 				nav: 2
@@ -36,7 +36,7 @@
 				template: "<add-task users='$resolve.users'></add-task>",
 				resolve: {
 					users: function(usersSrv) {
-						return usersSrv.getData()//.then( (data) => data );
+						return usersSrv.getUsers()//.then( (data) => data );
 					}
 				},
 			})
@@ -46,9 +46,12 @@
 				component: "editTask",
 				resolve: {
 					users: function(usersSrv) {
-						return usersSrv.getData()//.then( (data) => data );
+						return usersSrv.getUsers();//.then( (data) => data );
 					}
 				}
+			}).state("deleteTask", {
+				url: "/deleteTask/:taskId",
+				template: "<delete-task></delete-task>",
 			})
 			.state("editUser", {
 				url: "/editUser",
@@ -65,26 +68,26 @@
 			.state("addUser", {
 				url: "/addUser",
 				templateUrl: "users/add-user.html",
-				controller: "AddUser",
+				controller: "AddUserParent",
 				controllerAs: "$ctrl",
 				abstract: true
 			})
 				.state("addUser.General", {
 					url: "/General",
 					templateUrl: "users/add-user-general.html",
-					controller: "AddUserDetails",
+					controller: "AddUser",
 					controllerAs: "$ctrl",
 				})
 				.state("addUser.Cost", {
 					url: "/Cost",
 					templateUrl: "users/add-user-cost.html",
-					controller: "AddUserDetails",
+					controller: "AddUser",
 					controllerAs: "$ctrl",
 				})
 				.state("addUser.Notes", {
 					url: "/Notes",
 					templateUrl: "users/add-user-notes.html",
-					controller: "AddUserDetails",
+					controller: "AddUser",
 					controllerAs: "$ctrl",
 				})
 	}

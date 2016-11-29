@@ -1,0 +1,16 @@
+<h3>Delete Task</h3>
+<form>
+    <div class="form-group" >
+        <label>User</label>
+        <div>{{$ctrl.task.userName}}</div>
+    </div>
+    <div class="form-group" >
+        <span>Task</span>
+        <div>{{$ctrl.task.action}}</div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default"
+                ng-click="$ctrl.deleteTask($ctrl.task)">Delete Task</button>
+        <button class="btn btn-default" ng-click="$ctrl.navigate('home')">Cancel</button>
+    </div>
+</form>

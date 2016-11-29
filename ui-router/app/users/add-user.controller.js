@@ -6,7 +6,7 @@
 		.controller("AddUser", AddUser);
 
 	function AddUser() {
-		
+
 	}
 
 })();

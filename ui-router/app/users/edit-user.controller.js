@@ -5,6 +5,7 @@
 		.controller("EditUser", EditUser);
 
 	function EditUser() {
+		let $ctrl =this;
 		
 	}
 
