@@ -7,7 +7,9 @@
 	usersSrv.$inject = ["$http", "$q"];
 
 	function usersSrv($http, $q) {
-		let users = getData();
+		let users = getData().then(function (data) {
+				users = data;
+			});
 		return {
 			getData,
 			getUsers,
@@ -24,15 +26,15 @@
 					return response.data;
 				})
 				.catch(function(response) {
-					$q.reject(`Error: can not retrive data ${response.status}`)
+					$q.reject(`Error: can not retrieve data ${response.status}`)
 				});
 		}
 		function addUser(user) {
-			let id = users.$$state.value[users.$$state.value.length - 1].id++;
-			users.$$state.value.push({
-				id: 100,
+			let id = Math.max.apply(Math, users.map(function(o){return o.id})) + 1;
+			users.push({
+				id: id,
 				name: user.name,
-				location: "dsdsd"
+				location: user.location
 			})
 		}
 	}

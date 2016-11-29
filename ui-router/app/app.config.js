@@ -26,7 +26,7 @@
 				controllerAs: "$ctrl",
 				resolve: {
 					users: function(usersSrv) {
-						return usersSrv.getUsers();
+						return usersSrv.getData();
 					}
 				},
 				nav: 2
@@ -36,7 +36,7 @@
 				template: "<add-task users='$resolve.users'></add-task>",
 				resolve: {
 					users: function(usersSrv) {
-						return usersSrv.getUsers()//.then( (data) => data );
+						return usersSrv.getUsers();//.then( (data) => data );
 					}
 				},
 			})
@@ -75,20 +75,14 @@
 				.state("addUser.General", {
 					url: "/General",
 					templateUrl: "users/add-user-general.html",
-					controller: "AddUser",
-					controllerAs: "$ctrl",
 				})
 				.state("addUser.Cost", {
 					url: "/Cost",
 					templateUrl: "users/add-user-cost.html",
-					controller: "AddUser",
-					controllerAs: "$ctrl",
 				})
 				.state("addUser.Notes", {
 					url: "/Notes",
 					templateUrl: "users/add-user-notes.html",
-					controller: "AddUser",
-					controllerAs: "$ctrl",
 				})
 	}
 
